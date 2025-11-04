@@ -2,9 +2,9 @@
 
 This repository contains a robust, dependency-free vanilla JavaScript solution for embedding content via iframes. These scripts handle the complex communication required to make iframes responsive to their content's height, manage page navigation, and provide a seamless user experience.
 
-## Live Demo
+## Live Demo and Recording
 
-Check out the interactive demo on CodePen: [Dynamic iFrame Resizer Demo](https://codepen.io/4SiteStudios/pen/MYKRgEe)
+Check out the interactive demo on CodePen: [Dynamic iFrame Resizer Demo](https://codepen.io/4SiteStudios/pen/MYKRgEe) / [Recording](https://cln.sh/CzdcB4S2)
 
 ## The Problem
 
