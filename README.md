@@ -46,26 +46,9 @@ The solution consists of two scripts: one for the parent page and one for the ch
 
 Place the parent.js script on the main page that contains your `<iframe>` element. It can be placed in the `<head>` or before the closing `</body>` tag.
 
-```html
-<!-- Host page -->
-<script src="parent.js"></script>
-
-<iframe
-  id="en-iframe"
-  src="https://example.com/child.html"
-  style="width: 100%; border: 0;"
-  scrolling="no"
-></iframe>
-```
-
 ### Step 2: Add the Child Script
 
 Place the child.js script on **every page** that will be loaded inside the `<iframe>`.
-
-```html
-<!-- Inside each iframe page you control -->
-<script src="/path/to/child.js"></script>
-```
 
 ### Engaging Networks Integration Notes
 
