@@ -1,4 +1,4 @@
-# Dynamic iFrame Resizing and Communication Scripts
+# Dynamic iFrame Resizing and Communication Scripts for Engaging Networks
 
 [Live Demo on CodePen](https://codepen.io/4SiteStudios/pen/MYKRgEe)
 
