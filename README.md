@@ -1,8 +1,10 @@
 # Dynamic iFrame Resizing and Communication Scripts for Engaging Networks
 
-[Live Demo on CodePen](https://codepen.io/4SiteStudios/pen/MYKRgEe)
-
 This repository contains a robust, dependency-free vanilla JavaScript solution for embedding content via iframes. These scripts handle the complex communication required to make iframes responsive to their content's height, manage page navigation, and provide a seamless user experience.
+
+## Live Demo
+
+Check out the interactive demo on CodePen: [Dynamic iFrame Resizer Demo](https://codepen.io/4SiteStudios/pen/MYKRgEe)
 
 ## The Problem
 
@@ -24,10 +26,6 @@ These scripts solve all of these issues using the browser's `postMessage` API fo
 - **Dynamic Content Watcher:** On any user click, the script actively monitors for height changes for 2 seconds, smoothly resizing for CSS transitions and JS animations.
 - **Robust Height Calculation:** Uses a hybrid approach to accurately measure the height, including content, padding, and collapsing bottom margins.
 - **No Dependencies:** Written in pure, standalone vanilla JavaScript. No jQuery or other libraries are needed.
-
-## Live Demo
-
-Check out the interactive demo on CodePen: [Dynamic iFrame Resizer Demo](https://codepen.io/4SiteStudios/pen/MYKRgEe)
 
 ## How It Works
 
