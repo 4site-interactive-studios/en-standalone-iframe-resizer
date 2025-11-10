@@ -91,7 +91,7 @@ class iFrame {
   sendIframeHeight(force = false) {
     const bodyHeight = document.body.offsetHeight;
     const lastMargin = this._getLastVisibleElementMarginBottom();
-    const height = bodyHeight + lastMargin;
+    const height = bodyHeight + lastMargin + 16; // 16px buffer: Fix for cut-off issue on small screens
     if (force || height !== this.lastHeight) {
       this.lastHeight = height;
       this.logger.log(
