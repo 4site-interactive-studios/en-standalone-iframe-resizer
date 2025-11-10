@@ -1,18 +1,5 @@
 // Simplified mocks for compatibility if ENGrid/EnForm objects are not present
 const ENGrid = {
-  setBodyData: (key, value) =>
-    document.body.setAttribute(`data-engrid-${key}`, value),
-  getPageNumber: () => 1,
-  getPageCount: () => 1,
-  getGiftProcess: () => "donation",
-  getUrlParameter: (name) => {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    const regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-    const results = regex.exec(location.search);
-    return results === null
-      ? ""
-      : decodeURIComponent(results[1].replace(/\+/g, " "));
-  },
   watchForError: (callback) => {
     if (!callback) return;
     const observer = new MutationObserver(() => {
