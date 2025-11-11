@@ -1,18 +1,5 @@
 // Simplified mocks for compatibility if ENGrid/EnForm objects are not present
 const ENGrid = {
-  setBodyData: (key, value) =>
-    document.body.setAttribute(`data-engrid-${key}`, value),
-  getPageNumber: () => 1,
-  getPageCount: () => 1,
-  getGiftProcess: () => "donation",
-  getUrlParameter: (name) => {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    const regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-    const results = regex.exec(location.search);
-    return results === null
-      ? ""
-      : decodeURIComponent(results[1].replace(/\+/g, " "));
-  },
   watchForError: (callback) => {
     if (!callback) return;
     const observer = new MutationObserver(() => {
@@ -104,7 +91,7 @@ class iFrame {
   sendIframeHeight(force = false) {
     const bodyHeight = document.body.offsetHeight;
     const lastMargin = this._getLastVisibleElementMarginBottom();
-    const height = bodyHeight + lastMargin;
+    const height = bodyHeight + lastMargin + 16; // 16px buffer: Fix for cut-off issue on small screens
     if (force || height !== this.lastHeight) {
       this.lastHeight = height;
       this.logger.log(
