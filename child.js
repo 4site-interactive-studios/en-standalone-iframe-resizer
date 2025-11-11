@@ -1,3 +1,29 @@
+/*!
+ *
+ *                ((((
+ *          ((((((((
+ *       (((((((
+ *     (((((((           ****
+ *   (((((((          *******
+ *  ((((((((       **********     *********       ****    ***
+ *  ((((((((    ************   **************     ***    ****
+ *  ((((((   *******  *****   *****        *     **    ******        *****
+ *  (((   *******    ******   ******            ****  ********   ************
+ *      *******      *****     **********      ****    ****     ****      ****
+ *    *********************         *******   *****   ****     ***************
+ *     ********************            ****   ****    ****    ****
+ *                 *****    *****   *******  *****   *****     *****     **
+ *                *****     *************    ****    *******     **********
+ *
+ *  Date: Monday, November 10, 2025 @ 15:16:39 ET
+ *  By: Cawe Coy
+ *
+ *  Created by 4Site Studios
+ *  Come work with us or join our team, we would love to hear from you
+ *  https://www.4sitestudios.com/en
+ *
+ */
+
 // Simplified mocks for compatibility if ENGrid/EnForm objects are not present
 const ENGrid = {
   watchForError: (callback) => {
