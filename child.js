@@ -84,7 +84,12 @@ class iFrame {
   }
   onLoaded() {
     this.logger.log("iFrame DOM content loaded. Initializing.");
-    window.parent.postMessage({ iframePageLoaded: true }, "*");
+    if (
+      pageJson.pageNumber !== 1 ||
+      document.querySelector(".en__errorHeader")
+    ) {
+      window.parent.postMessage({ iframePageLoaded: true }, "*");
+    }
     setTimeout(() => this.sendIframeHeight(true), 300);
     window.addEventListener("load", () => {
       this.logger.log("Window 'load' event fired. Sending final height.");
