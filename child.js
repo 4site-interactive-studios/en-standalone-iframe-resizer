@@ -15,7 +15,7 @@
  *                 *****    *****   *******  *****   *****     *****     **
  *                *****     *************    ****    *******     **********
  *
- *  Date: Monday, November 10, 2025 @ 15:16:39 ET
+ *  Date: Monday, November 19, 2025 @ 14:27:39 ET
  *  By: Cawe Coy
  *
  *  Created by 4Site Studios
@@ -84,12 +84,7 @@ class iFrame {
   }
   onLoaded() {
     this.logger.log("iFrame DOM content loaded. Initializing.");
-    if (
-      pageJson.pageNumber !== 1 ||
-      document.querySelector(".en__errorHeader")
-    ) {
-      window.parent.postMessage({ iframePageLoaded: true }, "*");
-    }
+    window.parent.postMessage({ iframePageLoaded: true }, "*");
     setTimeout(() => this.sendIframeHeight(true), 300);
     window.addEventListener("load", () => {
       this.logger.log("Window 'load' event fired. Sending final height.");
