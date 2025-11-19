@@ -15,7 +15,7 @@
  *                 *****    *****   *******  *****   *****     *****     **
  *                *****     *************    ****    *******     **********
  *
- *  Date: Monday, November 10, 2025 @ 15:16:39 ET
+ *  Date: Monday, November 19, 2025 @ 14:27:39 ET
  *  By: Cawe Coy
  *
  *  Created by 4Site Studios
@@ -23,6 +23,8 @@
  *  https://www.4sitestudios.com/en
  *
  */
+
+var iframePageLoadedOnce = false;
 
 /**
  * Finds the iframe element that sent a postMessage event.
@@ -53,20 +55,24 @@ window.onmessage = (e) => {
 
   // --- On new page load, scroll to iframe ONLY if it's not in view ---
   else if (e.data.hasOwnProperty("iframePageLoaded")) {
-    const rect = iframe.getBoundingClientRect();
-    const isOutOfView = rect.top < 0 || rect.top > window.innerHeight;
+    // This condition prevents scrolling on initial page load
+    if (iframePageLoadedOnce) {
+      const rect = iframe.getBoundingClientRect();
+      const isOutOfView = rect.top < 0 || rect.top > window.innerHeight;
 
-    if (isOutOfView) {
-      console.log("iFrame is out of view. Scrolling to top of iFrame.");
-      const elDistanceToTop = window.pageYOffset + rect.top;
-      window.scrollTo({
-        top: elDistanceToTop,
-        left: 0,
-        behavior: "smooth",
-      });
-    } else {
-      console.log("iFrame is already in view. No scroll necessary.");
+      if (isOutOfView) {
+        console.log("iFrame is out of view. Scrolling to top of iFrame.");
+        const elDistanceToTop = window.pageYOffset + rect.top;
+        window.scrollTo({
+          top: elDistanceToTop,
+          left: 0,
+          behavior: "smooth",
+        });
+      } else {
+        console.log("iFrame is already in view. No scroll necessary.");
+      }
     }
+    iframePageLoadedOnce = true;
   }
 
   // --- Scroll to a specific point within the iframe (e.g., for errors) ---
